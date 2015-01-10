@@ -1,0 +1,6 @@
+[ 2015-01-11T01:54:53+08:00 ] ::1 /Zblog/index.php/Word/index
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000019s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000601s ]
+ERR: 无法加载模块:Word
+

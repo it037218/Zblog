@@ -1,0 +1,53 @@
+<include file="Public:header" /> 
+<include file="Public:nav" /> 
+	
+	<div style="width:980px;margin:0 auto">
+		<form action="__URL__/CreateWord" method="post">
+		<div style="margin-bottom:10px"> 
+			
+			<select name="xieyitype">
+				<option value="zhaiquanzhuanrang">债权转让</option>
+				<option value="oncedianfu">一次性垫付</option>
+				<option value="fenqidianfu">分期垫付</option>
+
+			</select>
+			<input class="btn btn-primary" type="submit" value="生成协议">
+
+		</div>
+		<table class="table">
+			<tr>
+				<td>选择</td>
+				<th>协议编号</th>
+				<th>用户名</th>
+				<th>转让金额（小写）</th>
+				<th>转让金额（大写）</th>
+				<th>垫付类型</th>
+				<th>是否发送</th>
+				<th>操作</th>
+				
+			</tr>
+
+			<volist name="data" id="vo">
+			<tr <if condition="$vo.status eq 1">style="background-color:red"<elseif condition="$vo.status eq 2" />style="background-color:green"<else /></if> >
+				<td> <label  class="checkbox"><input type="checkbox" name="user[]" style="margin:0 auto" value="{$vo.id}"></label ></td>
+				<td>{$vo.id}</td>
+				<td>{$vo.realname}</td>
+				<td>{$vo.zhuanrang}</td>
+				<td>{$vo.zhuanrangdaxie}</td>
+				<td><if condition="$vo.type eq 0">一次性垫付<else />分期垫付</if></td>
+				<td><if condition="$vo.status eq 0">待发送<else />已发送</if></td>
+				<td><a href="__URL__/Detail/id/{$vo.id}">查看</a></td>
+				
+			</tr>
+			</volist>
+
+		</table>
+
+		</form>
+
+	</div>
+
+
+
+</body>
+</html>
