@@ -4,3 +4,75 @@ INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000019s ]
 INFO: [ app_init ] --END-- [ RunTime:0.000601s ]
 ERR: 无法加载模块:Word
 
+[ 2015-01-11T02:13:10+08:00 ] ::1 /Zblog/index.php/AdminAdmin
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000028s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000758s ]
+ERR: 无法加载模块:AdminAdmin
+
+[ 2015-01-11T02:15:09+08:00 ] ::1 /Zblog/Public/Admin/images/backgrounds/calActiveBg.png
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000014s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000495s ]
+ERR: 无法加载模块:Public
+
+[ 2015-01-11T02:15:16+08:00 ] ::1 /Zblog/index.php/Article/list
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000014s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000574s ]
+ERR: 无法加载模块:Article
+
+[ 2015-01-11T02:15:37+08:00 ] ::1 /Zblog/Public/Admin/images/backgrounds/calActiveBg.png
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000028s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000681s ]
+ERR: 无法加载模块:Public
+
+[ 2015-01-11T02:16:11+08:00 ] ::1 /Zblog/Public/Admin/images/backgrounds/calActiveBg.png
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000014s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000457s ]
+ERR: 无法加载模块:Public
+
+[ 2015-01-11T02:17:22+08:00 ] ::1 /Zblog/Public/Admin/images/backgrounds/calActiveBg.png
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000011s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000349s ]
+ERR: 无法加载模块:Public
+
+[ 2015-01-11T02:17:36+08:00 ] ::1 /Zblog/Public/Admin/images/backgrounds/calActiveBg.png
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000010s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000329s ]
+ERR: 无法加载模块:Public
+
+[ 2015-01-11T02:27:49+08:00 ] ::1 /Zblog/index.php/Article/add
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000012s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000370s ]
+ERR: 无法加载模块:Article
+
+[ 2015-01-11T02:29:21+08:00 ] ::1 /Zblog/index.php/Article/add
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000016s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000697s ]
+ERR: 无法加载模块:Article
+
+[ 2015-01-11T02:29:28+08:00 ] ::1 /Zblog/index.php/Article/add
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000017s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000630s ]
+ERR: 无法加载模块:Article
+
+[ 2015-01-11T19:44:54+08:00 ] ::1 /Zblog/Public/Admin/images/backgrounds/calActiveBg.png
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000018s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000704s ]
+ERR: 无法加载模块:Public
+
+[ 2015-01-11T20:35:38+08:00 ] ::1 /Zblog/Public/Admin/images/backgrounds/calActiveBg.png
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000012s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000378s ]
+ERR: 无法加载模块:Public
+

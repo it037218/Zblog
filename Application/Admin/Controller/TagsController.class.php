@@ -1,11 +1,13 @@
 <?php
-	class TagsAction extends Action {
+namespace Admin\Controller;
+use Think\Controller;
+class TagsController extends Controller {
 
-		public function tags(){
-			$m=new TagsModel();
+		public function index(){
+			$m=M('tags');
 			
-			$res=$m->add();
-			
+			$res=$m->select();
+			$this->assign('data',$res);
 			$this->display();
 	    }
 
@@ -19,6 +21,17 @@
 			$this->display();
 		}
 
+		public function addTags(){ 
+
+			$data=$_POST;
+			$m=M('tags');
+			//var_dump($_POST);
+			$result=$m->add($data);
+			//var_dump($result);exit;
+			if($result){ 
+				$this->success('添加成功','index');
+			}
+		}
 
 	}
 

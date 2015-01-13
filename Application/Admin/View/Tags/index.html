@@ -23,47 +23,20 @@
 								<tr>
 									<th>标签编号</th>
 									<th>标签名称</th>
-									<th>创建时间</th>
+									<th>标签描述</th>
 									<th>操作</th>
 								</tr>
 							</thead>
 							<tbody>
+								<volist name='data' id='vo'>
 								<tr>
-									<td>Row 1</td>
-									<td>Row 2</td>
-									<td>Row 3</td>
-									<td>Row 4</td>
+									<td>{$vo.id}</td>
+									<td>{$vo.name}</td>
+									<td>{$vo.description}</td>
+									<td><a href="">编辑</a>&nbsp;<a href="">删除</a></td>
 								</tr>
-								<tr>
-									<td>Row 1</td>
-									<td>Row 2</td>
-									<td>Row 3</td>
-									<td>Row 4</td>
-								</tr>
-								<tr>
-									<td>Row 1</td>
-									<td>Row 2</td>
-									<td>Row 3</td>
-									<td>Row 4</td>
-								</tr>
-								<tr>
-									<td>Row 1</td>
-									<td>Row 2</td>
-									<td>Row 3</td>
-									<td>Row 4</td>
-								</tr>
-								<tr>
-									<td>Row 1</td>
-									<td>Row 2</td>
-									<td>Row 3</td>
-									<td>Row 4</td>
-								</tr>
-								<tr>
-									<td>Row 1</td>
-									<td>Row 2</td>
-									<td>Row 3</td>
-									<td>Row 4</td>
-								</tr>
+								</volist>
+								
 							</tbody>
 						</table>							
 					</div>
