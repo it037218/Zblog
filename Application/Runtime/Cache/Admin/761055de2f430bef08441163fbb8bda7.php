@@ -90,14 +90,6 @@
 <!--这里加载的语言文件会覆盖你在配置项目里添加的语言类型，比如你在配置项目里配置的是英文，这里加载的中文，那最后就是中文-->
 <script type="text/javascript" charset="utf-8" src="/Zblog/Public/Admin/ueditor/lang/zh-cn/zh-cn.js"></script>
 
-
-<script src="/Zblog/Public/Admin/js/jquery.min.js" type="text/javascript"></script>
-<script src="/Zblog/Public/Admin/multiselect/select2.js" type="text/javascript"></script>
-<script src="/Zblog/Public/Admin/multiselect/jquery.multiSelect.js" type="text/javascript"></script>
-
-<link href="/Zblog/Public/Admin/multiselect/select2.css" rel="stylesheet" type="text/css" />
-
-
 <style type="text/css">
     .clear {
         clear: both;
@@ -105,11 +97,20 @@
 </style>
 
 <div id="content">
+	<div id="content-header">
+		<h1>编辑文章</h1>
+		<div class="btn-group">
+			<a class="btn btn-large tip-bottom" title="Manage Files"><i class="icon-file"></i></a>
 
+			<a class="btn btn-large tip-bottom" title="Manage Users"><i class="icon-user"></i></a>
+			<a class="btn btn-large tip-bottom" title="Manage Comments"><i class="icon-comment"></i><span class="label label-important">5</span></a>
+			<a class="btn btn-large tip-bottom" title="Manage Orders"><i class="icon-shopping-cart"></i></a>
+		</div>
+	</div>
 	<div id="breadcrumb">
 		<a href="#" title="Go to Home" class="tip-bottom" style="font-size:14px;font-weight:bold"><i class="icon-home"></i> 首页</a>
 		<a class="tip-bottom" href="#" data-original-title="">文章管理</a>
-		<a class="current" href="#">添加文章</a>
+		<a class="current" href="#">编辑文章</a>
 	</div>
 
 	<div class="container-fluid">
@@ -120,77 +121,62 @@
 						<span class="icon">
 							<i class="icon-align-justify"></i>									
 						</span>
-						<h5>添加文章</h5>
+						<h5>编辑文章</h5>
 					</div>
 					<div class="widget-content nopadding">
-						<form action="" method="post" class="form-horizontal" />
+						<form action="/Zblog/index.php/Admin/Article/edit" method="post" class="form-horizontal" />
 							<div class="control-group">
 								<label class="control-label">文章标题</label>
 								<div class="controls">
-									<input type="text" placeholder="文章标题。。。" name="title"/>
+									<input type="text" value="<?php echo ($data["title"]); ?>" name="title"/>
 								</div>
 							</div>
 							<div class="control-group">
 								<label class="control-label">文章分类</label>
 								<div class="controls">
 									<select name="category_id">
-
-										<option id=""/>First option
-										<option id=""/>Second option
-										<option id=""/>Third option
-										<option id=""/>Fourth option
-										<option id=""/>Fifth option
-										<option id=""/>Sixth option
-										<option id=""/>Seventh option
-										<option id=""/>Eighth option
+										<option id="0"/>First option
+										<option id="1"/>Second option
+										<option id="2"/>Third option
+										<option id="3"/>Fourth option
+										<option id="4"/>Fifth option
+										<option id="5"/>Sixth option
+										<option id="6"/>Seventh option
+										<option id="7"/>Eighth option
 									</select>
 								</div>
 							</div>
 							<div class="control-group">
 								<label class="control-label">文章摘要</label>
 								<div class="controls">
-									<input type="text" placeholder="文章摘要。。。" name="summary"/>
+									<input type="text" value="<?php echo ($data["summary"]); ?>" name="summary"/>
 								</div>
 							</div>
-							<script type="text/javascript">
-			
-								$(document).ready( 	function(){
-
-									  $("#mySel2").select2({
-									    closeOnSelect:false,
-									    placeholder: "选择标签",
-
-									  });
-									  
-									});
-								
-							</script>
-							<style>
-								.select2-drop{z-index:1000 !important;}
-							</style>
-							
 							<div class="control-group">
-								<label class="control-label">标签选择</label>
+								<label class="control-label">状态</label>
 								<div class="controls">
-									<select id="mySel2" class="select2" multiple="multiple" name="tags[] " style="width:400px;z-index:1000">
-										<?php if(is_array($tags)): $i = 0; $__LIST__ = $tags;if( count($__LIST__)==0 ) : echo "" ;else: foreach($__LIST__ as $key=>$vo): $mod = ($i % 2 );++$i;?><option value="<?php echo ($vo["id"]); ?>" ><?php echo ($vo["name"]); ?></option><?php endforeach; endif; else: echo "" ;endif; ?>
-									   
-									</select>
-
+									<label class="radio inline">
+									  <input type="radio" value="" name="status">显示
+									  
+									</label>
+									<label class="radio inline">
+									  <input type="radio" value="" name="status">隐藏
+									</label>
 								</div>
 							</div>
 							<div class="control-group">
 								<label class="control-label">文章内容</label>
 								<div class="controls">
-									 <script id="editor" type="text/plain" name="content" style="width:700px;height:400px;">
-									 </script>
+									 <textarea id="editor" type="text/plain" name="content" style="width:700px;height:400px;">
+									 <?php echo ($data["content"]); ?>
+									 </textarea> 
 									
 								</div>
 							</div>
 							<script>
 								UE.getEditor('editor');
 							</script>
-
+							<input type="hidden" name="id" value="<?php echo ($data["id"]); ?>" />
 							<div class="form-actions" style="padding-left:450px">
 								<button type="submit" class="btn btn-primary">保存</button>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
 								<button  class="btn btn-primary edui-box edui-icon edui-default">预览</button>
@@ -202,7 +188,6 @@
 		</div>
 	</div>			
 </div>
-	
  		<script>
             $(function(){
                 $("#sidebar > ul > li.active > a").click(function(){

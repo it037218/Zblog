@@ -108,19 +108,24 @@
 									<th>文章编号</th>
 									<th>文章标题</th>
 									<th>文章标签</th>
+									<th>所属栏目</th>
+									<th>状态</th>
+									<th>发布时间</th>
 									<th>操作</th>
 								</tr>
 							</thead>
 							<tbody>
 							<?php if(is_array($list)): $i = 0; $__LIST__ = $list;if( count($__LIST__)==0 ) : echo "" ;else: foreach($__LIST__ as $key=>$vo): $mod = ($i % 2 );++$i;?><tr>
 									<td><?php echo ($vo["id"]); ?></td>
-									<td><?php echo ($vo["name"]); ?></td>
-									<td><?php echo ($vo["publish"]); ?></td>
-									<td><a href="">编辑</a> &nbsp;<a href="">删除</a> </td>
-								</tr><?php endforeach; endif; else: echo "" ;endif; ?>	
-							
-							</tbody>
+									<td><?php echo ($vo["title"]); ?></td>
 
+									<td><?php echo ($vo["tags"]); ?></td>
+									<td><?php echo ($vo["category"]); ?></td>
+									<td><?php echo ($vo["status"]); ?></td>
+									<td><?php echo ($vo["publish"]); ?></td>
+									<td><a href="">编辑</a> &nbsp;<a data-remote="true" href="/Zblog/index.php/Admin/Article/delete/id/<?php echo ($vo["id"]); ?>" role="button" class="btn delete" data-target="#myModal" data-toggle="modal" data="<?php echo ($vo["id"]); ?>" >删除</a> </td>
+								</tr><?php endforeach; endif; else: echo "" ;endif; ?>	
+							</tbody>
 						</table>
 
 					</div>
@@ -129,6 +134,45 @@
 			</div>
 		</div>
 	</div>	
+	<!-- Button to trigger modal -->
+	<!-- <a href="#myModal" role="button" class="btn" data-toggle="modal">查看演示案例</a> -->
+	 
+	<!-- Modal -->
+	<div id="myModal1" class="modal hide fade" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+	  <div class="modal-header">
+	    <button type="button" class="close" data-dismiss="modal" aria-hidden="true">×</button>
+	    <h3 id="myModalLabel">Modal header</h3>
+	  </div>
+	  <div class="modal-body">
+	    <p>确定删除吗？</p>
+	    <input type="hidden" id="deleteId" value="">
+	  </div>
+	  <div class="modal-footer">
+	    <button class="btn" data-dismiss="modal" aria-hidden="true">关闭</button>
+	    <button class="btn btn-primary">Save changes</button>
+	  </div>
+	</div>
+	<script type="text/javascript">
+		$(".delete").click(function (){
+		
+			var $href=$(this).attr("href");
+			var $id=$(this).attr('data');
+			alert($href);
+			$.post({ 
+				
+				"$href",
+				// { id: id}
+				success: function(data){
+				   alert(data);
+				}
+			});
+
+		})
+		
+	</script>
+
+
+
 
 </div>
  		<script>
@@ -144,12 +188,11 @@
         <script src="/Zblog/Public/Admin/js/excanvas.min.js"></script>
         <script src="/Zblog/Public/Admin/js/jquery.ui.custom.js"></script>
         <script src="/Zblog/Public/Admin/js/bootstrap.min.js"></script>
-        <script src="/Zblog/Public/Admin/js/jquery.flot.min.js"></script>
-        <script src="/Zblog/Public/Admin/js/jquery.flot.resize.min.js"></script>
+       
         <script src="/Zblog/Public/Admin/js/jquery.peity.min.js"></script>
         <script src="/Zblog/Public/Admin/js/fullcalendar.min.js"></script>
         <script src="/Zblog/Public/Admin/js/unicorn.js"></script>
-        <script src="/Zblog/Public/Admin/js/unicorn.dashboard.js"></script>
+       
 
 
     </body>
